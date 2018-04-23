@@ -23,6 +23,12 @@
 ```
 ## NVIDIA Graphics & CPU Mining
 
+Feaures:
+- GPU Mining for NVIDIA 10 Series graphics cards.
+- CPU Mining for most CPU processors (ARM not supported).
+- Automatic start (and restart) of miner scripts.
+- Miner information displayed on user login, with option to tail active logs.
+
 ...supports Nvidia GPUs
    and (most) CPUs.
 
