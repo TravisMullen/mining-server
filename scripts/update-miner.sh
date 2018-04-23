@@ -87,7 +87,8 @@ updateMinerConfUI () {
     # touch "${2}/${LOCALSTORAGE}"
 
     # temp file
-    touch tempminer
+    echo "# config: $(date '+%d-%m-%Y-%H:%M:%S')" > tempminer
+    echo "tempminer"
     cat tempminer
     # clear
     localstoragedata="${2}/${LOCALSTORAGE}"
@@ -98,7 +99,7 @@ updateMinerConfUI () {
         case "$loadpoolconfig" in
             y|Y ) echo
             echo "loading previous config..."
-            cat $localstoragedata >> tempminer
+            cp -f $localstoragedata tempminer
             echo;;
             * ) minerConfInputs tempminer ${2};;
         esac
@@ -106,6 +107,7 @@ updateMinerConfUI () {
         minerConfInputs tempminer ${2}
     fi
 
+    echo "tempminer"
     cat tempminer
     # move to final location
     # update .conf from new seed
