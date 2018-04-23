@@ -25,7 +25,7 @@ if [ "$?" == 1 ]; then
     echo
     echo
 
-    pgrep ${CPUMINERBIN}
+    pgrep $CPUMINERBIN
     exit $?
 
 else

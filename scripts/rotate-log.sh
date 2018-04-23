@@ -2,7 +2,7 @@
 
 
 # ${1} name
-# ${2} log file name (relative)
+# ${2} log file name (abs)
 # ${3} log directory MINERLOGDIR
 # ${4} restart log file MINERSTARTLOGFILE
 rotateMiningLog () {
