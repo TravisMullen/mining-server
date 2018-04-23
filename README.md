@@ -43,8 +43,8 @@ Developed and tested on: **Ubuntu Server 16.04**
 - Graphics (GPU) Miner, [ccminer](https://github.com/tpruvot/ccminer) &mdash; CUDA miner project, compatible with most nvidia cards.
 - CPU Miner, [cpuminer-opt](https://github.com/JayDDee/cpuminer-opt) &mdash; Optimized multi algo CPU miner.
 - Automatic start (and restart) of miner scripts.
-- Miner information displayed as 'dashboard' on user login, with option to immediately tail active logs.
-- CPU or GPU miner restart logs.
+- Miner information displayed as 'dashboard' on user login, with option to immediately view live active logs.
+- CPU and GPU miner restart logs.
 - **No Microsoft Windows Software**
 
 # prerequisite.
@@ -96,4 +96,4 @@ alias stopminers="stopgpu && stopcpu"
 
 [MiningServer.](https://github.com/TravisMullen/mining-server) is Free Software and is made available free of charge. Your donation, which is purely optional, supports our worldwide community. If you like the software, please consider a donation.
 
-- **XZC** `aKAwM6W6YLmdkseyTZ5LzsEsBJpsLFJJQ6`
+- **ZCoin (XZC)** &mdash; `aKAwM6W6YLmdkseyTZ5LzsEsBJpsLFJJQ6`
