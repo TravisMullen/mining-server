@@ -1,0 +1,52 @@
+## Start Monit in the background (run as a daemon):
+set daemon 60            # check services at 1-minute intervals
+#   with start delay 240    # optional: delay the first check by 4-minutes (
+
+# double check permissions on these files
+set logfile /var/log/monit.log
+set idfile /var/lib/monit/id
+set statefile /var/lib/monit/state
+
+set eventqueue
+basedir /var/lib/monit/events # set the base directory where events will be stored
+  slots 100                     # optionally limit the queue size
+
+check system $HOST
+  if loadavg (5min) > 3 then alert
+  if loadavg (15min) > 1 then alert
+  if memory usage > 80% for 4 cycles then alert
+  if swap usage > 40% for 4 cycles then alert
+  # Test the user part of CPU usage 
+  if cpu usage (user) > 80% for 2 cycles then alert
+  # Test the system part of CPU usage 
+  if cpu usage (system) > 80% for 2 cycles then alert
+  # Test the i/o wait part of CPU usage 
+  if cpu usage (wait) > 80% for 2 cycles then alert
+  # Test CPU usage including user, system and wait. Note that 
+  # multi-core systems can generate 100% per core
+  # so total CPU usage can be more than 100%
+  if cpu usage > 400% for 4 cycles then alert
+  group health
+
+check filesystem rootfs with path /
+  if space usage > 70% then alert
+  group health
+
+check process sshd with pidfile /var/run/sshd.pid
+  start program  "/bin/systemctl start ssh"
+  stop program  "/bin/systemctl stop ssh"
+  if failed port 22 protocol ssh for 4 cycles then restart
+  group health
+
+
+
+## Includes
+###############################################################################
+##
+## It is possible to include additional configuration parts from other files or
+## directories.
+#
+   include /etc/monit/conf.d/*
+#  include /etc/monit/conf-enabled/*
+#
+

@@ -1,0 +1,11 @@
+# start miners
+    alias startgpu="sudo ./start-gpu-miner.sh"
+    alias startcpu="sudo ./start-cpu-miner.sh"
+
+# stop miners
+    alias stopgpu="sudo ./stop-gpu-miner.sh"
+    alias stopcpu="sudo ./stop-cpu-miner.sh"
+
+# combined start and stop of both miners
+    alias startminers="startgpu && startcpu"
+    alias stopminers="stopgpu && stopcpu"

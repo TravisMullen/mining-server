@@ -1,0 +1,25 @@
+{
+  "name": "banana-lambic",
+  "version": "0.9.5",
+  "description": "Simple ZCoin Mining Server Installer",
+  "main": "sudo ./install.sh",
+  "scripts": {
+    "install": "sudo ./install.sh",
+    "update": "sudo ./install.sh",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://travismullen@bitbucket.org/travismullen/xzc-gpu.git"
+  },
+  "keywords": [
+    "installer",
+    "zcoin",
+    "mining",
+    "nvidia",
+    "ccminer"
+  ],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/travismullen/xzc-gpu#readme"
+}

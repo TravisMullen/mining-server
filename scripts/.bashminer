@@ -1,0 +1,147 @@
+#!/bin/bash
+
+source /usr/local/etc/miner.conf
+
+if [ -f ${MINERSCRIPTS}/.bashmineralias ]; then
+    source ${MINERSCRIPTS}/.bashmineralias
+fi
+
+
+cat ${MINERSCRIPTS}/header.txt
+
+
+cpid=$(pgrep ${CPUMINERBIN})
+gpid=$(pgrep ${GPUMINERBIN})
+
+echo
+echo "  user ${MINERUSERNAME}"
+echo "  pool ${POOLURL}"
+echo
+echo
+echo "Recent miner daemon restarts: ${MINERSTARTLOGFILE}"
+tail -n 4 ${MINERSTARTLOGFILE}
+echo
+echo "  CPU miner: ${cpid}"
+echo "  Graphics miner: ${gpid}"
+echo
+echo
+echo "[Press ENTER to see miner details.]"
+echo
+read -t 4 -n 1
+
+
+
+if [ ! -z $cpid ]; then
+    echo
+    echo
+    cat ${MINERSCRIPTS}/cpuminer.txt
+    echo
+    echo "${CPUMINERBIN}"
+    echo "PID: ${cpid}"
+    echo "logs: ${CPUMINERLOGFILE}"
+    echo
+    head -n 16 ${CPUMINERLOGFILE}
+    # echo "   ..."
+    echo
+    # echo "Continue Tailing CPU miner Log? ${CPUMINERLOGFILE}"
+    # read -t 4 -n 2 -p "${CPUMINERBIN} PID: ${cpid} (y/n)?" choice
+
+    # case "$choice" in 
+    #   y|Y )
+    #     echo
+    #     if [ ! -z $gpid ]; then
+    #         echo "${GPUMINERBIN} is active. PID: ${gpid}"
+    #         sleep 2
+    #     fi
+
+
+    #     clear
+    #     echo
+    #     sleep 0.5
+    #     cat ${MINERSCRIPTS}/logging.txt
+    #     sleep 0.5
+    #     cat ${MINERSCRIPTS}/cpuminer.txt
+    #     sleep 0.5
+    #     echo
+    #     tail -f -s 4 ${CPUMINERLOGFILE};;
+    #   * ) echo
+        tail ${CPUMINERLOGFILE}
+        echo
+        echo 
+
+else 
+    echo
+    cat ${MINERSCRIPTS}/cpuminer.txt
+    cat ${MINERSCRIPTS}/inactive.txt
+    echo
+    sudo monit status cpu-miner
+    echo
+fi
+    if [ ! -z $gpid ]; then
+        echo
+        echo
+        cat ${MINERSCRIPTS}/gpuminer.txt
+        echo
+        echo "${GPUMINERBIN}"
+        echo "PID: ${gpid}"
+        echo "logs: ${GPUMINERLOGFILE}"
+        echo
+        echo
+        echo
+        nvidia-smi
+        echo
+        head -n 16 ${GPUMINERLOGFILE}
+        echo "   ..."
+        echo
+        echo "Continue Tailing Graphics (GPU) miner Log? ${GPUMINERLOGFILE}"
+        read -t 4 -n 2 -p "${GPUMINERBIN} PID: ${gpid} (y/n)?" gpuchoice
+        case "$gpuchoice" in 
+          y|Y ) sleep 0.5
+            cat ${MINERSCRIPTS}/logging.txt
+            sleep 0.5
+            cat ${MINERSCRIPTS}/gpuminer.txt
+            sleep 0.5
+            echo
+            tail -f -s 4 ${GPUMINERLOGFILE};;
+          * ) tail ${GPUMINERLOGFILE}
+            echo
+            echo "view CPU miner log at any time with command:"
+            echo "  \"tail -f ${CPUMINERLOGFILE}\""
+            echo 
+            echo
+            echo "view GPU miner log at any time with command:"
+            echo "  \"tail -f ${GPUMINERLOGFILE}\""
+            echo
+            if [ -f ${MINERSCRIPTS}/.bashmineralias ]; then
+                echo
+                echo "available commands:"
+                echo
+                cat ${MINERSCRIPTS}/.bashmineralias
+                echo
+            fi
+            echo ;;
+        esac
+
+    else 
+        echo
+        cat ${MINERSCRIPTS}/gpuminer.txt
+        cat ${MINERSCRIPTS}/inactive.txt
+        echo
+        sudo monit status gpu-miner
+        echo
+    fi
+        # ;;
+    # esac
+    echo
+    echo
+# else 
+#     echo
+#     cat ${MINERSCRIPTS}/cpuminer.txt
+#     cat ${MINERSCRIPTS}/inactive.txt
+#     echo
+#     sudo monit status cpu-miner
+#     echo
+# fi
+
+
+echo
