@@ -2,7 +2,7 @@
 
 LOCALSTORAGE="storage.conf"
 
-# update jawn.
+# todo :: clean up this file's shitty logic
 
 # ${1} login username
 # ${2} login password
@@ -74,6 +74,13 @@ minerConfInputs () {
         ${2}
 }
 
+
+# 1. check for localstoragedata
+# 2. a. load into new tempfile
+#    b. upload new user READ into tempfile
+# 3. add new/updated config from repo to tempfile
+# 4. override existing .conf with tempfile
+
 # ${1} seed .conf
 # ${2} MINERCONF (destination)
 updateMinerConfUI () {
@@ -84,10 +91,6 @@ updateMinerConfUI () {
 
     # clear
     localstoragedata="${2}/${LOCALSTORAGE}"
-
-    # echo ${1} ${2}
-    # echo ${1}
-    # echo ${2}
 
     if [ -f $localstoragedata ]; then
         read -p "  do you want to load your last mining pool config? (y/n) " loadpoolconfig
