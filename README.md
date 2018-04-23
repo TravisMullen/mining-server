@@ -32,7 +32,9 @@
 
 
 ```
-# Automated NVIDIA Graphics & CPU Mining 🤖⛏
+# MiningServer.
+## Automated NVIDIA Graphics & CPU Mining 🤖⛏
+
 ## Easy 💁‍♀️, Stable 🏋️‍♀️, High Hashrates 🚀🌝.
 
 Developed and tested on: **Ubuntu Server 16.04**
@@ -78,7 +80,7 @@ sudo ./install.sh
     - `sudo monit status gpu-miner` for gpu miner status only.
     - `sudo monit status cpu-miner` for cpu miner status only.
 
-## Miner Aliases (available, but never really needed)
+## Miner Control Commands (available, but never really needed)
 
 ```bash
 alias startgpu="sudo ./start-gpu-miner.sh"
@@ -90,3 +92,8 @@ alias stopcpu="sudo ./stop-cpu-miner.sh"
 alias startminers="startgpu && startcpu"
 alias stopminers="stopgpu && stopcpu"
 ```
+
+
+[MiningServer.](https://github.com/TravisMullen/mining-server) is Free Software and is made available free of charge. Your donation, which is purely optional, supports our worldwide community. If you like the software, please consider a donation.
+
+- **XZC** `aKAwM6W6YLmdkseyTZ5LzsEsBJpsLFJJQ6`
