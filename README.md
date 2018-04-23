@@ -78,7 +78,7 @@ sudo ./install.sh
     - `sudo monit status gpu-miner` for gpu miner status only.
     - `sudo monit status cpu-miner` for cpu miner status only.
 
-## Miner Aliases (optional, but never really needed)
+## Miner Aliases (available, but never really needed)
 
 ```bash
 alias startgpu="sudo ./start-gpu-miner.sh"
