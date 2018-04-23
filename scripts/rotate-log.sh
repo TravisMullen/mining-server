@@ -10,9 +10,11 @@ rotateMiningLog () {
 
     #rotate log
     mkdir -p ${3}
-    # touch ${2}
-    mv ${2} "${3}/${__NOW__}-${1}-miner.log"
+
+	if [ -f ${2} ]; then
+	    mv -f ${2} "${3}/${__NOW__}-${1}-miner.log"
+	fi
 
     #log restart
-    echo " ${1} :: ${__NOW__}" >> ${4}
+    echo " ${1} :: ${__NOW__}" >> ${4}'
 }
