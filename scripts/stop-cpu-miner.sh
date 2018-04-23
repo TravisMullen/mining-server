@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-cpid=$(sudo bash -c "./check-cpu-miner.sh")
+cpid=$(sudo bash -c "${MINERSCRIPTS}/check-gpu-miner.sh")
 
 if test $? -eq 1; then
     echo

@@ -5,12 +5,14 @@ source /usr/local/etc/miner.conf
 pid=$(pgrep ${GPUMINERBIN})
 if test $pid -eq 1; then
 
+    echo "starting 1"
     source $MINERSCRIPTS/rotate-log.sh
     rotateMiningLog gpu \
         ${GPUMINERLOGFILE} \
         ${MINERLOGDIR} \
         ${MINERSTARTLOGFILE}
 
+    echo "starting 2"
     ${GPUMINERBIN} \
         -o ${POOLURL}:${GPUPOOLPORT} \
         -u "${MINERUSERNAME}.${MINERWORKERNAME}-gpu" \
@@ -19,7 +21,7 @@ if test $pid -eq 1; then
         # -i ${INTENSITY} \
         #   --submit-stale \
 
-    clear
+    echo "starting 3"
     cat $MINERSCRIPTS/gpuminer.txt
     cat $MINERSCRIPTS/starting.txt
     echo "${GPUMINERBIN} @ ${POOLURL}:${GPUPOOLPORT}"
@@ -27,6 +29,7 @@ if test $pid -eq 1; then
     echo
     echo
 
+    echo "starting 4"
     pgrep ${GPUMINERBIN}
     exit $?
 
