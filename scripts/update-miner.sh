@@ -97,9 +97,8 @@ updateMinerConfUI () {
         echo
         read -p "    do you want to load your last mining pool config? (y/n) " loadpoolconfig
         case "$loadpoolconfig" in
-            y|Y ) echo $localstoragedata
+            y|Y ) echo
             echo "loading previous config..."
-            cat $localstoragedata
             cat $localstoragedata >> tempminer
             echo;;
             * ) minerConfInputs tempminer ${2};;
@@ -108,8 +107,6 @@ updateMinerConfUI () {
         minerConfInputs tempminer ${2}
     fi
 
-    echo "tempminer"
-    # cat tempminer
     # move to final location
     # update .conf from new seed
     cat "${1}" >> tempminer
@@ -117,8 +114,5 @@ updateMinerConfUI () {
     sudo mkdir -p ${2}
     sudo cp -f tempminer ${2}/miner.conf
 
-    echo "config set to:"
-    sudo cat ${2}/miner.conf
-    sleep 4
 }
 
