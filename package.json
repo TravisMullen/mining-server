@@ -1,7 +1,7 @@
 {
-  "name": "banana-lambic",
+  "name": "mining-server",
   "version": "0.9.5",
-  "description": "Simple ZCoin Mining Server Installer",
+  "description": "Automated NVIDIA Graphics and CPU Mining on Ubuntu Server 16.04",
   "main": "sudo ./install.sh",
   "scripts": {
     "install": "sudo ./install.sh",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://travismullen@bitbucket.org/travismullen/xzc-gpu.git"
+    "url": "git+https://github.com/TravisMullen/mining-server.git"
   },
   "keywords": [
     "installer",
@@ -21,5 +21,5 @@
   ],
   "author": "",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/travismullen/xzc-gpu#readme"
+  "homepage": "https://github.com/TravisMullen/mining-server#readme"
 }
