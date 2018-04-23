@@ -109,7 +109,7 @@ updateMinerConfUI () {
     # move to final location
     # update .conf from new seed
     cat "${1}" > ./tempminer.conf
-    sudo mv -f ./tempminer.conf 
+    sudo mv -f ./tempminer.conf ${2}/miner.conf
 
     echo "config set to:"
     cat ${2}/miner.conf
