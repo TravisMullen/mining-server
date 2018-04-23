@@ -10,7 +10,7 @@ rotateMiningLog () {
 
     #rotate log
     mkdir -p ${3}
-    touch ${2}
+    # touch ${2}
     mv ${2} "${3}/${__NOW__}-${1}-miner.log"
 
     #log restart

@@ -1,8 +1,7 @@
 #!/bin/bash -e
 
-gpid=$(sudo bash -c "${MINERSCRIPTS}/check-gpu-miner.sh")
-
-if [ "${?}" == 0 ]; then
+pgrep $GPUMINERBIN
+if [ "$?" == 1 ]; then
     echo
     echo "Graphics (GPU) miner is not running."
     echo

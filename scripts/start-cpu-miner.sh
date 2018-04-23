@@ -2,8 +2,8 @@
 
 source /usr/local/etc/miner.conf
 
-pid=$(pgrep ${CPUMINERBIN})
-if [ "$pid" == 1 ]; then
+pgrep $CPUMINERBIN
+if [ "$?" == 1 ]; then
 
     source $MINERSCRIPTS/rotate-log.sh
     rotateMiningLog cpu \
@@ -11,11 +11,11 @@ if [ "$pid" == 1 ]; then
         ${MINERLOGDIR} \
         ${MINERSTARTLOGFILE}
 
-    ${CPUMINERBIN} \
-        -o ${POOLURL}:${CPUPOOLPORT} \
-        -u "${MINERUSERNAME}.${MINERWORKERNAME}-cpu" \
-        -p ${MINERPASSWORD} \
-        -a ${ALGO} > ${CPUMINERLOGFILE} &
+    $CPUMINERBIN \
+        -o $POOLURL:$CPUPOOLPORT \
+        -u "$MINERUSERNAME.$MINERWORKERNAME-cpu" \
+        -p $MINERPASSWORD \
+        -a $ALGO > $CPUMINERLOGFILE &
 
     clear
     cat $MINERSCRIPTS/cpuminer.txt

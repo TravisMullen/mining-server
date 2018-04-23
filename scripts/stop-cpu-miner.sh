@@ -1,8 +1,7 @@
 #!/bin/bash -e
 
-cpid=$(sudo bash -c "${MINERSCRIPTS}/check-gpu-miner.sh")
-
-if [ "${?}" == 1 ]; then
+pgrep $CPUMINERBIN
+if [ "$?" == 1 ]; then
     echo
     echo "CPU miner is not running."
     echo

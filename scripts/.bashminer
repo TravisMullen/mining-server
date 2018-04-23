@@ -112,13 +112,13 @@ fi
             echo "view GPU miner log at any time with command:"
             echo "  \"tail -f ${GPUMINERLOGFILE}\""
             echo
-            if [ -f ${MINERSCRIPTS}/.bashmineralias ]; then
-                echo
-                echo "available commands:"
-                echo
-                cat ${MINERSCRIPTS}/.bashmineralias
-                echo
-            fi
+            # if [ -f ${MINERSCRIPTS}/.bashmineralias ]; then
+            #     echo
+            #     echo "available commands:"
+            #     echo
+            #     cat ${MINERSCRIPTS}/.bashmineralias
+            #     echo
+            # fi
             echo ;;
         esac
 
