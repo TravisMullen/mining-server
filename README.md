@@ -29,11 +29,8 @@ Feaures:
 - Automatic start (and restart) of miner scripts.
 - Miner information displayed on user login, with option to tail active logs.
 
-...supports Nvidia GPUs
-   and (most) CPUs.
-
-  Only tested/supported for:
-  Ubuntu Server 16.04
+  Only tested on:
+  **Ubuntu Server 16.04**
 
 # install script.
 ### requires `sudo` permissions
