@@ -5,8 +5,6 @@ source ./templates.sh
 
 if [ -f ./scripts/update-miner.sh ]; then
     source ./scripts/update-miner.sh
-# else if [ -f ${MINERSCRIPTS}/update-miner.sh ]; then
-#     source ${MINERSCRIPTS}/update-miner.sh
 else 
   echo "Update your local repository before continuing."
   echo
@@ -54,7 +52,7 @@ sleep 0.5
 echo
 read -p "  install monitoring and auto restarting of your miner/system? (y/n) " autostartsupport
 case "$autostartsupport" in
-  y|Y ) updateMinerConfUI ./install.conf ${MINERCONF}
+  y|Y ) updateMinerConfUI ./install.conf ${MINERCONF}/miner.conf
     clear
     echo
     cat ./banners/install.txt

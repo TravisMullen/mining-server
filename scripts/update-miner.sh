@@ -36,14 +36,14 @@ updateMinerConf () {
 
 
 # ${1} filename (.conf)
-# ${2} MINERCONF
+# ${2} MINERCONF FILE
 minerConfInputs () {
     clear
 
     echo
     echo
     echo "Enter the following info about your mining pool:"
-    echo " this will be set in: ${2}/miner.conf"
+    echo " this will be set in: ${2}"
     sleep 1
     echo "    Username (or wallet address)  "
     read miningpoolusername
@@ -86,18 +86,18 @@ updateMinerConfUI () {
     if [ -f $localstoragedata ]; then
         read -p "  do you want to load your last mining pool config? (y/n) " loadpoolconfig
         case "$loadpoolconfig" in
-            y|Y ) echo
+            y|Y )  cat "${1}" > "${2}"
             echo "loading previous config..."
             echo
             sleep 0.5
-            cat $localstoragedata
+            cat $localstoragedata > "${2}"
             sleep 1
             echo;;
-            * ) cat "${1}" > "${2}/miner.conf"
-            minerConfInputs localstoragedata ${2};;
+            * ) cat "${1}" > "${2}"
+            minerConfInputs ${1} ${2};;
         esac
     else
-        cat "${1}" > "${2}/miner.conf"
+        cat "${1}" > "${2}"
         minerConfInputs ${1} ${2}
     fi
 }
