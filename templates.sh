@@ -24,8 +24,6 @@ completedInstall () {
     clear 
     echo
     cat ./banners/install.txt
-    echo
-    sleep 0.5
     cat ./banners/complete.txt
-    sleep 1
+    sleep 2
 }

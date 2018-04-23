@@ -93,7 +93,8 @@ updateMinerConfUI () {
     localstoragedata="${2}/${LOCALSTORAGE}"
 
     if [ -f $localstoragedata ]; then
-        read -p "  do you want to load your last mining pool config? (y/n) " loadpoolconfig
+        echo
+        read -p "    do you want to load your last mining pool config? (y/n) " loadpoolconfig
         case "$loadpoolconfig" in
             y|Y ) echo
             echo "loading previous config..."

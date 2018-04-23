@@ -49,6 +49,8 @@ clear
 echo
 cat ./banners/install.txt
 sleep 0.5
+cat ./banners/autostart.txt
+sleep 0.5
 echo
 read -p "  install monitoring and auto restarting of your miner/system? (y/n) " autostartsupport
 case "$autostartsupport" in
