@@ -63,13 +63,13 @@ sudo ./install.sh
 
 1. `sudo reboot` 
 2. If install correctly the miners will start within a few minutes of boot.
-    - Graphics (GPU) Miner will auto-start after 2 minutes
-    - CPU Miner will auto-start after 10 minutes.
+    - Graphics (GPU) Miner will auto-start after 2 minutes of being inactive.
+    - CPU Miner will auto-start after 10 minutes of being inactive.
 
 3. Check status auto-start system [M/Monit](https://mmonit.com/). 
-    - `sudo monit status` for server status.
-    - `sudo monit status gpu-miner` for gpu miner status.
-    - `sudo monit status cpu-miner` for cpu miner status.
+    - `sudo monit status` for entire server status.
+    - `sudo monit status gpu-miner` for gpu miner status only.
+    - `sudo monit status cpu-miner` for cpu miner status only.
 
 ## Miner Aliases (optional, but never really needed)
 
