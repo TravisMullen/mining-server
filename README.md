@@ -26,9 +26,11 @@
                                 
 
     this one is dedicated to all the miners
-    in discord that told me a had to use
-    Windows for "better hash rates".
+    in discord that told me a had to use Windows.
                                  
+                                &mdash; 🖕
+
+
 ```
 # Automated NVIDIA Graphics & CPU Mining
 ## Easy 💁‍♀️, Stable 🏋️‍♀️, High Hashrates ⛏🚀🌝.
