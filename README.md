@@ -10,8 +10,8 @@
              | \  __ /
             /|  '.__/
          .'` \     |_
-        /     '-__ / `- Ubuntu Linux
-    ___  ____       _             
+        /     '-__ / `- Ubuntu 16.04
+    ___  ____       _   Linux          
     |  \/  (_)     (_)            
     | .  . |_ _ __  _ _ __   __ _ 
     | |\/| | | '_ \| | '_ \ / _` |
@@ -28,16 +28,16 @@
     this one is dedicated to all the miners
     in discord that told me a had to use Windows.
                                  
-                                - 🖕
+                                - 🖕🍌
 
 
 ```
-# Automated NVIDIA Graphics & CPU Mining
-## Easy 💁‍♀️, Stable 🏋️‍♀️, High Hashrates ⛏🚀🌝.
+# Automated NVIDIA Graphics & CPU Mining 🤖⛏
+## Easy 💁‍♀️, Stable 🏋️‍♀️, High Hashrates 🚀🌝.
 
 Developed and tested on: **Ubuntu Server 16.04**
 
-## Feaures
+## Feaures 💰
 - Graphics (GPU) Miner, [ccminer](https://github.com/tpruvot/ccminer) &mdash; CUDA miner project, compatible with most nvidia cards.
 - CPU Miner, [cpuminer-opt](https://github.com/JayDDee/cpuminer-opt) &mdash; Optimized multi algo CPU miner.
 - Automatic start (and restart) of miner scripts.
