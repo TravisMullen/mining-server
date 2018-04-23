@@ -5,10 +5,10 @@ source ./templates.sh
 
 sudo apt-get install monit -y
 
-mkdir -p $MINERCONF
+# mkdir -p $MINERCONF
 # configerd in ./install.sh with ./templates.sh
-cat ./install.conf >> ./scripts/miner.conf
-sudo cp -f ./scripts/miner.conf $MINERCONF/miner.conf
+# cat ./install.conf >> ./scripts/miner.conf
+# sudo cp -f ./scripts/miner.conf $MINERCONF/miner.conf
 
 sudo rm -rf $MINERSCRIPTS
 mkdir -p $MINERSCRIPTS

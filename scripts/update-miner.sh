@@ -88,8 +88,8 @@ updateMinerConfUI () {
 
     # temp file
     echo "# config: $(date '+%d-%m-%Y-%H:%M:%S')" > tempminer
-    echo "tempminer"
-    cat tempminer
+    # echo "tempminer"
+    # cat tempminer
     # clear
     localstoragedata="${2}/${LOCALSTORAGE}"
 
@@ -109,7 +109,7 @@ updateMinerConfUI () {
     fi
 
     echo "tempminer"
-    cat tempminer
+    # cat tempminer
     # move to final location
     # update .conf from new seed
     cat "${1}" >> tempminer
