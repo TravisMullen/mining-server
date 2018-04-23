@@ -3,7 +3,8 @@
 source /usr/local/etc/miner.conf
 
 pid=$(pgrep ${GPUMINERBIN})
-if [ "${pid}" == 1 ]; then
+    echo "starting $pid"
+if [ "$pid" == 1 ]; then
 
     echo "starting 1"
     source $MINERSCRIPTS/rotate-log.sh
