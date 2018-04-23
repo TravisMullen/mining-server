@@ -29,8 +29,8 @@
   Only tested/supported for:
   Ubuntu Server 16.04
 
-# install.
-### copy and paste below as user (requires `sudo` permissions)
+# install script.
+### requires `sudo` permissions
 
 ```sh 
 git clone https://github.com/TravisMullen/mining-server.git
@@ -38,7 +38,7 @@ cd mining-server
 chmod +x ./*.sh
 sudo ./install.sh 
 ```
-
+## install script as one line.
 `git clone https://github.com/TravisMullen/mining-server.git && cd mining-server && chmod +x ./*.sh && sudo ./install.sh `
 
 ## Miner Aliases
