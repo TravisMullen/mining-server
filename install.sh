@@ -52,7 +52,7 @@ sleep 0.5
 echo
 read -p "  install monitoring and auto restarting of your miner/system? (y/n) " autostartsupport
 case "$autostartsupport" in
-  y|Y ) updateMinerConfUI ./install.conf ${MINERCONF}/miner.conf
+  y|Y ) updateMinerConfUI ./install.conf ${MINERCONF}
     clear
     echo
     cat ./banners/install.txt
