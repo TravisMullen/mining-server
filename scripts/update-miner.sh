@@ -32,6 +32,7 @@ updateMinerConf () {
 
     # update .conf and set a local store
     # cat "${7}" > "${8}/${LOCALSTORAGE}"
+    cat "${7}" > "${8}"
 }
 
 
@@ -75,7 +76,7 @@ minerConfInputs () {
 # ${1} filename (.conf)
 # ${2} MINERCONF
 updateMinerConfUI () {
-
+    touch "${2}/${LOCALSTORAGE}"
     # clear
     localstoragedata="${2}/${LOCALSTORAGE}"
 
@@ -95,8 +96,11 @@ updateMinerConfUI () {
     #         minerConfInputs ${1} ${2};;
     #     esac
     # else
-    #     cat "${1}" > "${2}/miner.conf"
-        minerConfInputs ${1} ${2}/miner.conf
+        cat "${1}" > "${2}/miner.conf"
+        minerConfInputs $localstoragedata ${2}/storage.conf
+
+        # cat "${1}" > "${2}/miner.conf"
+        cat "${2}/storage.conf" >> "${2}/miner.conf"
     # fi
 }
 
