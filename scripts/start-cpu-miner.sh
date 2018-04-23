@@ -3,7 +3,7 @@
 source /usr/local/etc/miner.conf
 
 pid=$(pgrep ${CPUMINERBIN})
-if test $pid -eq 1; then
+if [ "${pid}" == 1 ]; then
 
     source $MINERSCRIPTS/rotate-log.sh
     rotateMiningLog cpu \

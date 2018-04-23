@@ -2,7 +2,7 @@
 
 gpid=$(sudo bash -c "${MINERSCRIPTS}/check-gpu-miner.sh")
 
-if test $? -eq 1; then
+if [ "${?}" == 0 ]; then
     echo
     echo "Graphics (GPU) miner is not running."
     echo
@@ -18,7 +18,7 @@ sleep 0.2
 
 echo
 sudo kill $?
-    if test $? -eq 0; then
+    if [ "${?}" == 0 ]; then
         echo "Process ID ${gpid} has been stopped."
     else
         echo "Unable to stop Process. ${gpid}"
