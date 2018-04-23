@@ -11,38 +11,32 @@ LOCALSTORAGE="storage.conf"
 # ${5} gpuport
 # ${6} algo
 # ${7} filename (.conf)
-# ${8} path to .conf
 updateMinerConf () {
-    sudo bash -c 'cat "${7}" > "${8}/${LOCALSTORAGE}"'
 
     grep -v MINERUSERNAME ${7} > tempedit && mv tempedit ${7}
-    sudo bash -c 'echo "MINERUSERNAME=${1}" >> "${7}"'
-    sudo bash -c 'echo "MINERUSERNAME=${1}" >> "${8}/${LOCALSTORAGE}"'
+    echo "MINERUSERNAME=${1}" >> "${7}"
 
     grep -v MINERPASSWORD ${7} > tempedit && mv tempedit ${7}
-    sudo bash -c 'echo "MINERPASSWORD=${2}" >> "${7}"'
-    sudo bash -c 'echo "MINERPASSWORD=${2}" >> "${8}/${LOCALSTORAGE}"'
+    echo "MINERPASSWORD=${2}" >> "${7}"
 
     grep -v POOLURL ${7} > tempedit && mv tempedit ${7}
-    sudo bash -c 'echo "POOLURL=${3}" >> "${7}"'
-    sudo bash -c 'echo "POOLURL=${3}" >> "${8}/${LOCALSTORAGE}"'
+    echo "POOLURL=${3}" >> "${7}"
 
     grep -v CPUPOOLPORT ${7} > tempedit && mv tempedit ${7}
-    sudo bash -c 'echo "CPUPOOLPORT=${4}" >> "${7}"'
-    sudo bash -c 'echo "CPUPOOLPORT=${4}" >> "${8}/${LOCALSTORAGE}"'
+    echo "CPUPOOLPORT=${4}" >> "${7}"
     grep -v GPUPOOLPORT ${7} > tempedit && mv tempedit ${7}
-    sudo bash -c 'echo "GPUPOOLPORT=${5}" >> "${7}"'
-    sudo bash -c 'echo "GPUPOOLPORT=${5}" >> "${8}/${LOCALSTORAGE}"'
+    echo "GPUPOOLPORT=${5}" >> "${7}"
 
     grep -v ALGO ${7} > tempedit && mv tempedit ${7}
-    sudo bash -c 'echo "ALGO=${6}" >> "${7}"'
-    sudo bash -c 'echo "ALGO=${6}" >> "${8}/${LOCALSTORAGE}"'
-    
+    echo "ALGO=${6}" >> "${7}"
+
+    # update .conf and set a local store
+    # cat "${7}" > "${8}/${LOCALSTORAGE}"
 }
 
 
 # ${1} filename (.conf)
-# ${2} MINERCONF FILE
+# ${2} MINERCONF
 minerConfInputs () {
     clear
 
@@ -89,22 +83,20 @@ updateMinerConfUI () {
     # echo ${1}
     # echo ${2}
 
-    if [ -f $localstoragedata ]; then
-        read -p "  do you want to load your last mining pool config? (y/n) " loadpoolconfig
-        case "$loadpoolconfig" in
-            y|Y )  sudo bash -c 'cat "${1}" > "${2}/miner.conf"'
-            echo "loading previous config..."
-            echo
-            sleep 0.5
-            sudo bash -c 'cat $localstoragedata >> "${2}/miner.conf"'
-            sleep 1
-            echo;;
-            * ) sudo bash -c 'cat "${1}" > "${2}/miner.conf"'
-            minerConfInputs ${2}/miner.conf ${2};;
-        esac
-    else
-        sudo bash -c 'cat "${1}" > "${2}/miner.conf"'
-        minerConfInputs ${2}/miner.conf ${2}
-    fi
+    # if [ -f $localstoragedata ]; then
+    #     read -p "  do you want to load your last mining pool config? (y/n) " loadpoolconfig
+    #     case "$loadpoolconfig" in
+    #         y|Y ) echo
+    #         echo "loading previous config..."
+    #         cat "${1}" > "${2}/miner.conf"
+    #         cat "$localstoragedata" >> "${2}/miner.conf"
+    #         echo;;
+    #         * ) cat "${1}" > "${2}/miner.conf"
+    #         minerConfInputs ${1} ${2};;
+    #     esac
+    # else
+    #     cat "${1}" > "${2}/miner.conf"
+        minerConfInputs ${1} ${2}/miner.conf
+    # fi
 }
 
