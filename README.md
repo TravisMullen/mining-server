@@ -31,8 +31,8 @@
 ## Developed and tested on: **Ubuntu Server 16.04**
 
 ## Feaures
-- [ccminer](https://github.com/tpruvot/ccminer) &mdash; CUDA miner project, compatible with most nvidia cards .
-- [cpuminer-opt](https://github.com/JayDDee/cpuminer-opt) &mdash; Optimized multi algo CPU miner.
+- Graphics (GPU) Miner, [ccminer](https://github.com/tpruvot/ccminer) &mdash; CUDA miner project, compatible with most nvidia cards.
+- CPU Miner, [cpuminer-opt](https://github.com/JayDDee/cpuminer-opt) &mdash; Optimized multi algo CPU miner.
 - Automatic start (and restart) of miner scripts.
 - Miner information displayed as 'dashboard' on user login, with option to immediately tail active logs.
 - CPU or GPU miner restart logs.
@@ -55,7 +55,20 @@ sudo ./install.sh
 ## install script as one line.
 `git clone https://github.com/TravisMullen/mining-server.git && cd mining-server && chmod +x ./*.sh && sudo ./install.sh `
 
-## Miner Aliases
+
+# after install
+
+1. `sudo reboot` 
+2. If install correctly the miners will start within a few minutes of boot.
+    - Graphics (GPU) Miner will auto-start after 2 minutes
+    - CPU Miner will auto-start after 10 minutes.
+
+3. Check status auto-start system [M/Monit](https://mmonit.com/). 
+    - `sudo monit status` for server status.
+    - `sudo monit status gpu-miner` for gpu miner status.
+    - `sudo monit status cpu-miner` for cpu miner status.
+
+## Miner Aliases (optional, but never really needed)
 
 ```bash
 alias startgpu="sudo ./start-gpu-miner.sh"
