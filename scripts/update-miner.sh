@@ -31,8 +31,9 @@ updateMinerConf () {
     echo "ALGO=${6}" >> "${7}"
 
     # update .conf and set a local store
-    # cat "${7}" > "${8}/${LOCALSTORAGE}"
-    cat "${7}" > "${8}"
+    cat "${7}" > tempedit
+    sudo mv -f tempedit "${2}/${LOCALSTORAGE}"
+    # cat "${7}" > "${8}"
 }
 
 
@@ -73,10 +74,14 @@ minerConfInputs () {
         ${2}
 }
 
-# ${1} filename (.conf)
-# ${2} MINERCONF
+# ${1} seed .conf
+# ${2} MINERCONF (destination)
 updateMinerConfUI () {
-    touch "${2}/${LOCALSTORAGE}"
+    # touch "${2}/${LOCALSTORAGE}"
+
+    # temp file
+    touch ./tempminer.conf
+
     # clear
     localstoragedata="${2}/${LOCALSTORAGE}"
 
@@ -84,23 +89,22 @@ updateMinerConfUI () {
     # echo ${1}
     # echo ${2}
 
-    # if [ -f $localstoragedata ]; then
-    #     read -p "  do you want to load your last mining pool config? (y/n) " loadpoolconfig
-    #     case "$loadpoolconfig" in
-    #         y|Y ) echo
-    #         echo "loading previous config..."
-    #         cat "${1}" > "${2}/miner.conf"
-    #         cat "$localstoragedata" >> "${2}/miner.conf"
-    #         echo;;
-    #         * ) cat "${1}" > "${2}/miner.conf"
-    #         minerConfInputs ${1} ${2};;
-    #     esac
-    # else
-        cat "${1}" > "${2}/miner.conf"
-        minerConfInputs $localstoragedata ${2}/storage.conf
+    if [ -f $localstoragedata ]; then
+        read -p "  do you want to load your last mining pool config? (y/n) " loadpoolconfig
+        case "$loadpoolconfig" in
+            y|Y ) echo
+            echo "loading previous config..."
+            cat $localstoragedata >> ./tempminer.conf
+            echo;;
+            * ) minerConfInputs ./tempminer.conf ${2};;
+        esac
+    else
+        minerConfInputs ./tempminer.conf ${2}
+    fi
 
-        # cat "${1}" > "${2}/miner.conf"
-        cat "${2}/storage.conf" >> "${2}/miner.conf"
-    # fi
+    # move to final location
+    # update .conf from new seed
+    cat "${1}" > ./tempminer.conf
+    sudo mv -f ./tempminer.conf ${2}/miner.conf
 }
 
