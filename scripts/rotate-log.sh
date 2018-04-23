@@ -16,5 +16,5 @@ rotateMiningLog () {
 	fi
 
     #log restart
-    echo " ${1} :: ${__NOW__}" >> ${4}'
+    echo " ${1} :: ${__NOW__}" >> ${4}
 }
