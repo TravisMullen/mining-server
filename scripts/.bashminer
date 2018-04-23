@@ -73,8 +73,8 @@ else
     echo
     cat ${MINERSCRIPTS}/cpuminer.txt
     cat ${MINERSCRIPTS}/inactive.txt
-    echo
-    sudo monit status cpu-miner
+    # echo
+    # sudo monit status cpu-miner
     echo
 fi
     if [ ! -z $gpid ]; then
@@ -126,8 +126,8 @@ fi
         echo
         cat ${MINERSCRIPTS}/gpuminer.txt
         cat ${MINERSCRIPTS}/inactive.txt
-        echo
-        sudo monit status gpu-miner
+        # echo
+        # sudo monit status gpu-miner
         echo
     fi
         # ;;
