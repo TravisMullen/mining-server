@@ -33,13 +33,13 @@
 ### copy and paste below as user (requires `sudo` permissions)
 
 ```sh 
-git clone https://travismullen@bitbucket.org/travismullen/xzc-gpu.git
-cd xzc-gpu
+git clone https://github.com/TravisMullen/mining-server.git
+cd mining-server
 chmod +x ./*.sh
 sudo ./install.sh 
 ```
 
-`git clone https://travismullen@bitbucket.org/travismullen/xzc-gpu.git && cd xzc-gpu && chmod +x ./*.sh && sudo ./install.sh `
+`git clone https://github.com/TravisMullen/mining-server.git && cd mining-server && chmod +x ./*.sh && sudo ./install.sh `
 
 ## Miner Aliases
 
