@@ -2,9 +2,9 @@
 
 source /usr/local/etc/miner.conf
 
-pid=$(pgrep ${GPUMINERBIN})
-    echo "starting $pid"
-if [ "$pid" == 1 ]; then
+pgrep $GPUMINERBIN
+#    echo "starting $pid"
+if [ "$?" == 1 ]; then
 
     echo "starting 1"
     source $MINERSCRIPTS/rotate-log.sh
@@ -14,11 +14,11 @@ if [ "$pid" == 1 ]; then
         ${MINERSTARTLOGFILE}
 
     echo "starting 2"
-    ${GPUMINERBIN} \
-        -o ${POOLURL}:${GPUPOOLPORT} \
-        -u "${MINERUSERNAME}.${MINERWORKERNAME}-gpu" \
-        -p ${MINERPASSWORD} \
-        -a ${ALGO} > ${GPUMINERLOGFILE} &
+    $GPUMINERBIN \
+        -o $POOLURL:$GPUPOOLPORT \
+        -u "$MINERUSERNAME.$MINERWORKERNAME-gpu" \
+        -p $MINERPASSWORD \
+        -a $ALGO > $GPUMINERLOGFILE &
         # -i ${INTENSITY} \
         #   --submit-stale \
 
@@ -31,7 +31,7 @@ if [ "$pid" == 1 ]; then
     echo
 
     echo "starting 4"
-    pgrep ${GPUMINERBIN}
+    pgrep $GPUMINERBIN
     exit $?
 
 else
@@ -41,4 +41,4 @@ else
     echo
 fi
 
-exit $pid
+exit 1
