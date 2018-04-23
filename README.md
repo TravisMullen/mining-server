@@ -25,8 +25,8 @@
     \____/ \___|_|    \_/ \___|_(_) 
                                 
 
-    this one is dedicated to all the miners
-    in discord that told me a had to use Windows.
+    "This one is dedicated to all the miners
+     in discord that told me I had to use Windows.
                                  
                                 - 🖕🍌
 
