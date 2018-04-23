@@ -14,25 +14,25 @@ LOCALSTORAGE="storage.conf"
 updateMinerConf () {
 
     grep -v MINERUSERNAME ${7} > tempedit && mv tempedit ${7}
-    echo "MINERUSERNAME=${1}" >> "${7}"
+    echo "MINERUSERNAME=${1}" >> ${7}
 
     grep -v MINERPASSWORD ${7} > tempedit && mv tempedit ${7}
-    echo "MINERPASSWORD=${2}" >> "${7}"
+    echo "MINERPASSWORD=${2}" >> ${7}
 
     grep -v POOLURL ${7} > tempedit && mv tempedit ${7}
-    echo "POOLURL=${3}" >> "${7}"
+    echo "POOLURL=${3}" >> ${7}
 
     grep -v CPUPOOLPORT ${7} > tempedit && mv tempedit ${7}
-    echo "CPUPOOLPORT=${4}" >> "${7}"
+    echo "CPUPOOLPORT=${4}" >> ${7}
     grep -v GPUPOOLPORT ${7} > tempedit && mv tempedit ${7}
-    echo "GPUPOOLPORT=${5}" >> "${7}"
+    echo "GPUPOOLPORT=${5}" >> ${7}
 
     grep -v ALGO ${7} > tempedit && mv tempedit ${7}
-    echo "ALGO=${6}" >> "${7}"
+    echo "ALGO=${6}" >> ${7}
 
     # update .conf and set a local store
-    cat "${7}" > tempedit
-    sudo mv -f tempedit "${2}/${LOCALSTORAGE}"
+    cat ${7} > tempedit
+    sudo mv -f tempedit "${8}/${LOCALSTORAGE}"
     # cat "${7}" > "${8}"
 }
 
