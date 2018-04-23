@@ -28,7 +28,7 @@
     this one is dedicated to all the miners
     in discord that told me a had to use Windows.
                                  
-                                &mdash; 🖕
+                                - 🖕
 
 
 ```
