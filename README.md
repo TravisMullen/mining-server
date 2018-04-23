@@ -24,9 +24,14 @@
     /\__/ /  __/ |   \ V /  __/ |_  
     \____/ \___|_|    \_/ \___|_(_) 
                                 
+
+    this one is dedicated to all the miners
+    in discord that told me a had to use
+    Windows for "better hash rates".
                                  
 ```
 # Automated NVIDIA Graphics & CPU Mining
+## Easy 💁‍♀️, Stable 🏋️‍♀️, High Hashrates ⛏🚀🌝.
 
 Developed and tested on: **Ubuntu Server 16.04**
 
