@@ -31,11 +31,11 @@
 ## Developed and tested on: **Ubuntu Server 16.04**
 
 ## Feaures
-- GPU Mining for NVIDIA 10 Series graphics cards.
-- CPU Mining for most CPU processors (ARM not supported).
+- [ccminer](https://github.com/tpruvot/ccminer) &mdash; CUDA miner project, compatible with most nvidia cards .
+- [cpuminer-opt](https://github.com/JayDDee/cpuminer-opt) &mdash; Optimized multi algo CPU miner.
 - Automatic start (and restart) of miner scripts.
-- Miner information displayed on user login, with option to tail active logs.
-- Log of when the last CPU or GPU miner restart was triggered.
+- Miner information displayed as 'dashboard' on user login, with option to immediately tail active logs.
+- CPU or GPU miner restart logs.
 - **No Microsoft Windows Software**
 
 # prerequisite
