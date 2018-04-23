@@ -5,7 +5,7 @@
   "main": "sudo ./install.sh",
   "scripts": {
     "install": "sudo ./install.sh",
-    "update": "sudo ./install.sh",
+    "update": "git stash && git pull origin master && sudo ./install.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

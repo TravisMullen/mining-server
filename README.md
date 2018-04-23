@@ -39,7 +39,7 @@
 
 Developed and tested on: **Ubuntu Server 16.04**
 
-## Feaures 💰
+## Features 💰
 - Graphics (GPU) Miner, [ccminer](https://github.com/tpruvot/ccminer) &mdash; CUDA miner project, compatible with most nvidia cards.
 - CPU Miner, [cpuminer-opt](https://github.com/JayDDee/cpuminer-opt) &mdash; Optimized multi algo CPU miner.
 - Automatic start (and restart) of miner scripts.
