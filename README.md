@@ -26,9 +26,9 @@
                                 
                                  
 ```
-# NVIDIA Graphics & CPU Mining
+# Automated NVIDIA Graphics & CPU Mining
 
-## Developed and tested on: **Ubuntu Server 16.04**
+Developed and tested on: **Ubuntu Server 16.04**
 
 ## Feaures
 - Graphics (GPU) Miner, [ccminer](https://github.com/tpruvot/ccminer) &mdash; CUDA miner project, compatible with most nvidia cards.
@@ -38,13 +38,13 @@
 - CPU or GPU miner restart logs.
 - **No Microsoft Windows Software**
 
-# prerequisite
+# prerequisite.
 1. Download and install [Ubuntu Server 16.04](http://releases.ubuntu.com/16.04.4/ubuntu-16.04.4-server-amd64.iso) with persistance (install onto disk or USB).
-2. Install [OpenSSH Server](https://help.ubuntu.com/lts/serverguide/openssh-server.html). Consider taking additional steps to properly [secure your server](https://www.linode.com/docs/security/securing-your-server/).
-3. SSH into your host server and you are ready to run the install scripts below.
+2. Install [OpenSSH Server](https://help.ubuntu.com/lts/serverguide/openssh-server.html). `sudo apt install openssh-server` Consider taking additional steps to properly [secure your server](https://www.linode.com/docs/security/securing-your-server/).
+3. [SSH](https://www.digitalocean.com/community/tutorials/how-to-use-ssh-to-connect-to-a-remote-server-in-ubuntu) into your host server and you are ready to run the install scripts below.
 
-# install script.
-### requires `sudo` permissions
+# install.
+requires `sudo` permissions
 
 ```sh 
 git clone https://github.com/TravisMullen/mining-server.git
@@ -52,11 +52,11 @@ cd mining-server
 chmod +x ./*.sh
 sudo ./install.sh 
 ```
-## install script as one line.
+### install script as one line.
 `git clone https://github.com/TravisMullen/mining-server.git && cd mining-server && chmod +x ./*.sh && sudo ./install.sh `
 
 
-# after install
+# after install.
 
 1. `sudo reboot` 
 2. If install correctly the miners will start within a few minutes of boot.
