@@ -40,7 +40,10 @@ Developed and tested on: **Ubuntu Server 16.04**
 
 # prerequisite.
 1. Download and install [Ubuntu Server 16.04](http://releases.ubuntu.com/16.04.4/ubuntu-16.04.4-server-amd64.iso) with persistance (install onto disk or USB).
-2. Install [OpenSSH Server](https://help.ubuntu.com/lts/serverguide/openssh-server.html). `sudo apt install openssh-server` Consider taking additional steps to properly [secure your server](https://www.linode.com/docs/security/securing-your-server/).
+2. Install [OpenSSH Server](https://help.ubuntu.com/lts/serverguide/openssh-server.html). Consider taking additional steps to properly [secure your server](https://www.linode.com/docs/security/securing-your-server/).
+```sh
+sudo apt install openssh-server
+``` 
 3. [SSH](https://www.digitalocean.com/community/tutorials/how-to-use-ssh-to-connect-to-a-remote-server-in-ubuntu) into your host server and you are ready to run the install scripts below.
 
 # install.
