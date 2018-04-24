@@ -13,26 +13,26 @@ LOCALSTORAGE="storage.conf"
 # ${7} filename (.conf)
 updateMinerConf () {
 
-    grep -v MINERUSERNAME ${7} > tempedit && mv tempedit ${7}
+    grep -v MINERUSERNAME ${7} > ./tempedit && mv ./tempedit ${7}
     echo "MINERUSERNAME=${1}" >> ${7}
 
-    grep -v MINERPASSWORD ${7} > tempedit && mv tempedit ${7}
+    grep -v MINERPASSWORD ${7} > ./tempedit && mv ./tempedit ${7}
     echo "MINERPASSWORD=${2}" >> ${7}
 
-    grep -v POOLURL ${7} > tempedit && mv tempedit ${7}
+    grep -v POOLURL ${7} > ./tempedit && mv ./tempedit ${7}
     echo "POOLURL=${3}" >> ${7}
 
-    grep -v CPUPOOLPORT ${7} > tempedit && mv tempedit ${7}
+    grep -v CPUPOOLPORT ${7} > ./tempedit && mv ./tempedit ${7}
     echo "CPUPOOLPORT=${4}" >> ${7}
-    grep -v GPUPOOLPORT ${7} > tempedit && mv tempedit ${7}
+    grep -v GPUPOOLPORT ${7} > ./tempedit && mv ./tempedit ${7}
     echo "GPUPOOLPORT=${5}" >> ${7}
 
-    grep -v ALGO ${7} > tempedit && mv tempedit ${7}
+    grep -v ALGO ${7} > ./tempedit && mv ./tempedit ${7}
     echo "ALGO=${6}" >> ${7}
 
     # update .conf and set a local store
-    cat ${7} > tempedit
-    sudo mv -f tempedit "${8}/${LOCALSTORAGE}"
+    cat ${7} > ./tempedit
+    sudo mv -f ./tempedit "${8}/${LOCALSTORAGE}"
     # cat "${7}" > "${8}"
 }
 
@@ -87,9 +87,9 @@ updateMinerConfUI () {
     # touch "${2}/${LOCALSTORAGE}"
 
     # temp file
-    echo "# config: $(date '+%d-%m-%Y-%H:%M:%S')" > tempminer
-    # echo "tempminer"
-    # cat tempminer
+    echo "# config: $(date '+%d-%m-%Y-%H:%M:%S')" > ./tempminer
+    # echo "./tempminer"
+    # cat ./tempminer
     # clear
     localstoragedata="${2}/${LOCALSTORAGE}"
 
@@ -99,20 +99,20 @@ updateMinerConfUI () {
         case "$loadpoolconfig" in
             y|Y ) echo
             echo "loading previous config..."
-            cat $localstoragedata >> tempminer
+            cat $localstoragedata >> ./tempminer
             echo;;
-            * ) minerConfInputs tempminer ${2};;
+            * ) minerConfInputs ./tempminer ${2};;
         esac
     else
-        minerConfInputs tempminer ${2}
+        minerConfInputs ./tempminer ${2}
     fi
 
     # move to final location
     # update .conf from new seed
-    cat "${1}" >> tempminer
+    cat "${1}" >> ./tempminer
 
     sudo mkdir -p ${2}
-    sudo cp -f tempminer ${2}/miner.conf
+    sudo cp -f ./tempminer ${2}/miner.conf
 
 }
 
