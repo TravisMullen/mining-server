@@ -4,8 +4,8 @@
 # ${2} path to scripts
 # ${3} cycles to fail before start
 addStartScript () {
-  echo "check program ${1}-miner with path \"/bin/bash -c '. ${2}/check-${1}-miner.sh'\""
-  echo "  if status == 1 for ${3} cycles then exec \"/bin/bash -c '. ${2}/start-${1}-miner.sh'\""
+  echo "check program ${1}-miner with path \". ${2}/check-${1}-miner.sh\""
+  echo "  if status == 1 for ${3} cycles then exec \". ${2}/start-${1}-miner.sh\""
   # echo "    as uid $(logname) and gid $(logname)"
   echo "  group miners"
   echo ""
