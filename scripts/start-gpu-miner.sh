@@ -2,7 +2,7 @@
 
 source /usr/local/etc/miner.conf
 
-pgrep $GPUMINERBIN
+pgrep ${GPUMINERBIN}
 if [ "$?" == 1 ]; then
 
     source $MINERSCRIPTS/rotate-log.sh
@@ -26,7 +26,7 @@ if [ "$?" == 1 ]; then
     echo
     echo
 
-    pgrep $GPUMINERBIN
+    pgrep ${GPUMINERBIN}
     exit $?
 
 else
