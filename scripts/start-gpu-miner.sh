@@ -15,19 +15,19 @@ source /usr/local/etc/miner.conf
         -o $POOLURL:$GPUPOOLPORT \
         -u "$MINERUSERNAME.$HOSTNAME-gpu" \
         -p $MINERPASSWORD \
-        -a $ALGO > $GPUMINERLOGFILE &
+        -a $ALGO > ${GPUMINERLOGFILE} &
         # -i ${INTENSITY} \
         #   --submit-stale \
 
-    cat $MINERSCRIPTS/gpuminer.txt
-    cat $MINERSCRIPTS/starting.txt
-    echo "${GPUMINERBIN} @ ${POOLURL}:${GPUPOOLPORT}"
+    # cat $MINERSCRIPTS/gpuminer.txt
+    # cat $MINERSCRIPTS/starting.txt
+    # echo "${GPUMINERBIN} @ ${POOLURL}:${GPUPOOLPORT}"
 
 #     echo
 #     echo
 
-#     pgrep ${GPUMINERBIN}
-#     exit $?
+    pgrep ${GPUMINERBIN}
+    exit $?
 
 # else
 #     echo

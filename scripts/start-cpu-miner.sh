@@ -15,18 +15,18 @@ source /usr/local/etc/miner.conf
         -o $POOLURL:$CPUPOOLPORT \
         -u "$MINERUSERNAME.$HOSTNAME-cpu" \
         -p $MINERPASSWORD \
-        -a $ALGO > $CPUMINERLOGFILE &
+        -a $ALGO > ${CPUMINERLOGFILE} &
 
-    clear
-    cat $MINERSCRIPTS/cpuminer.txt
-    cat $MINERSCRIPTS/starting.txt
-    echo "${CPUMINERBIN} @ ${POOLURL}:${CPUPOOLPORT}"
+    # clear
+    # cat $MINERSCRIPTS/cpuminer.txt
+    # cat $MINERSCRIPTS/starting.txt
+    # echo "${CPUMINERBIN} @ ${POOLURL}:${CPUPOOLPORT}"
 
 #     echo
 #     echo
 
-#     pgrep ${CPUMINERBIN}
-#     exit $?
+    pgrep ${CPUMINERBIN}
+    exit $?
 
 # else
 #     echo
