@@ -14,8 +14,8 @@ cpid=$(pgrep ${CPUMINERBIN})
 gpid=$(pgrep ${GPUMINERBIN})
 
 echo
-echo "  user ${MINERUSERNAME}"
-echo "  pool ${POOLURL}"
+echo "      user ${MINERUSERNAME}"
+echo "      pool ${POOLURL}"
 echo
 echo
 echo "Recent miner daemon restarts: ${MINERSTARTLOGFILE}"
