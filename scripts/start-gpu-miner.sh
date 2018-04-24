@@ -13,7 +13,7 @@ if [ "$?" == 1 ]; then
 
     $GPUMINERBIN \
         -o $POOLURL:$GPUPOOLPORT \
-        -u "$MINERUSERNAME.$MINERWORKERNAME-gpu" \
+        -u "$MINERUSERNAME.$HOSTNAME-gpu" \
         -p $MINERPASSWORD \
         -a $ALGO > $GPUMINERLOGFILE &
         # -i ${INTENSITY} \
@@ -25,7 +25,7 @@ if [ "$?" == 1 ]; then
 
     echo
     echo
-    
+
     pgrep $GPUMINERBIN
     exit $?
 

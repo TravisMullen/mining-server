@@ -35,9 +35,11 @@
 # MiningServer.
 ## Automated NVIDIA Graphics & CPU Mining 🤖⛏
 
+
 ## Easy 💁‍♀️, Stable 🏋️‍♀️, High Hashrates 🚀🌝.
 
-Developed and tested on: **Ubuntu Server 16.04**
+Developed and tested on: **Ubuntu Server 16.04** 
+Not supported for Ubuntu Desktop which has graphics drivers that can cause issues.
 
 ## Features 💰
 - Graphics (GPU) Miner, [ccminer](https://github.com/tpruvot/ccminer) &mdash; CUDA miner project, compatible with most nvidia cards.
@@ -79,7 +81,7 @@ sudo ./install.sh
     - `sudo monit status` for entire server status.
     - `sudo monit status gpu-miner` for gpu miner status only.
     - `sudo monit status cpu-miner` for cpu miner status only.
-
+<!-- 
 ## Miner Control Commands (available, but never really needed)
 
 ```bash
@@ -91,9 +93,9 @@ alias stopcpu="sudo ./stop-cpu-miner.sh"
 
 alias startminers="startgpu && startcpu"
 alias stopminers="stopgpu && stopcpu"
-```
+``` -->
 
 
-[MiningServer.](https://github.com/TravisMullen/mining-server) is Free Software and is made available free of charge. Your donation, which is purely optional, supports our worldwide community. If you like the software, please consider a donation.
+[MiningServer.](https://github.com/TravisMullen/mining-server) is **Free Software** and is made available free of charge. Your donation, which is purely optional, supports our worldwide community. If you like the software, please consider a donation.
 
 - **ZCoin (XZC)** &mdash; `aKAwM6W6YLmdkseyTZ5LzsEsBJpsLFJJQ6`

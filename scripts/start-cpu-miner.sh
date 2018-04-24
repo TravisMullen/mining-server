@@ -13,7 +13,7 @@ if [ "$?" == 1 ]; then
 
     $CPUMINERBIN \
         -o $POOLURL:$CPUPOOLPORT \
-        -u "$MINERUSERNAME.$MINERWORKERNAME-cpu" \
+        -u "$MINERUSERNAME.$HOSTNAME-cpu" \
         -p $MINERPASSWORD \
         -a $ALGO > $CPUMINERLOGFILE &
 
