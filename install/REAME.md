@@ -1,0 +1,3 @@
+```sh
+git clone https://github.com/TravisMullen/mining-server.git && cd mining-server && chmod +x ./*.sh && sudo ./install.sh
+```
