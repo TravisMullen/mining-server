@@ -2,8 +2,8 @@
 
 source /usr/local/etc/miner.conf
 
-pgrep ${GPUMINERBIN}
-if [ "$?" == 1 ]; then
+# pgrep ${GPUMINERBIN}
+# if [ "$?" == 1 ]; then
 
     source $MINERSCRIPTS/rotate-log.sh
     rotateMiningLog gpu \
@@ -23,17 +23,17 @@ if [ "$?" == 1 ]; then
     cat $MINERSCRIPTS/starting.txt
     echo "${GPUMINERBIN} @ ${POOLURL}:${GPUPOOLPORT}"
 
-    echo
-    echo
+#     echo
+#     echo
 
-    pgrep ${GPUMINERBIN}
-    exit $?
+#     pgrep ${GPUMINERBIN}
+#     exit $?
 
-else
-    echo
-    echo "Cannot start miner."
-    echo "${GPUMINERBIN} already running: $pid"
-    echo
-fi
+# else
+#     echo
+#     echo "Cannot start miner."
+#     echo "${GPUMINERBIN} already running: $pid"
+#     echo
+# fi
 
-exit 1
+# exit 1

@@ -25,9 +25,10 @@ echo "  CPU miner: ${cpid}"
 echo "  Graphics miner: ${gpid}"
 echo
 echo
-echo "[Press ENTER to see miner details.]"
-echo
-read -t 4 -n 1
+sleep 2
+# echo "[Press ENTER to see miner details.]"
+# echo
+# read -t 4 -n 1
 
 
 
@@ -77,6 +78,7 @@ else
     # sudo monit status cpu-miner
     echo
 fi
+sleep 1
     if [ ! -z $gpid ]; then
         echo
         echo

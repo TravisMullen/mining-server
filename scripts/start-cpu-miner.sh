@@ -2,8 +2,8 @@
 
 source /usr/local/etc/miner.conf
 
-pgrep ${CPUMINERBIN}
-if [ "$?" == 1 ]; then
+# pgrep ${CPUMINERBIN}
+# if [ "$?" == 1 ]; then
 
     source $MINERSCRIPTS/rotate-log.sh
     rotateMiningLog cpu \
@@ -22,17 +22,17 @@ if [ "$?" == 1 ]; then
     cat $MINERSCRIPTS/starting.txt
     echo "${CPUMINERBIN} @ ${POOLURL}:${CPUPOOLPORT}"
 
-    echo
-    echo
+#     echo
+#     echo
 
-    pgrep ${CPUMINERBIN}
-    exit $?
+#     pgrep ${CPUMINERBIN}
+#     exit $?
 
-else
-    echo
-    echo "Cannot start miner."
-    echo "${CPUMINERBIN} already running: $pid"
-    echo
-fi
+# else
+#     echo
+#     echo "Cannot start miner."
+#     echo "${CPUMINERBIN} already running: $pid"
+#     echo
+# fi
 
-exit $pid
+# exit $pid
