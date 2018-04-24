@@ -95,6 +95,7 @@ alias startminers="startgpu && startcpu"
 alias stopminers="stopgpu && stopcpu"
 ``` -->
 
+# .
 
 [MiningServer.](https://github.com/TravisMullen/mining-server) is **Free Software** and is made available free of charge. Your donation, which is purely optional, supports our worldwide community. If you like the software, please consider a donation.
 
