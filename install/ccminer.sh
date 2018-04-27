@@ -1,10 +1,8 @@
 #!/bin/bash -e
 
-nvidia-smi
-if test $? -eq 0
+which nvidia-smi
+if test $? -eq 1
 then
-  echo "nvidia drivers are installed correctly"
-else
   # nvidia drivers
   sudo apt-get remove nvidia* && sudo apt-get autoremove -y
   sudo add-apt-repository ppa:graphics-drivers/ppa -y
@@ -20,6 +18,8 @@ else
   sudo apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/7fa2af80.pub
   sudo apt-get update
   sudo apt-get install cuda -y
+else
+  echo "nvidia drivers are installed correctly"
 fi
 
 which ccminer
